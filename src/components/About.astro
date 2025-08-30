@@ -1,0 +1,71 @@
+---
+import Location_icon from './Location_icon.astro';
+---
+
+<header id="about">
+    <hgroup>
+        <h1>Miguel Mateos</h1>
+        <p>
+            Soy desarrollador con <strong>más de 3 años de experiencia</strong> en el mundo IT
+        </p>
+    </hgroup>
+
+    <div class="profile">
+        <img src="/images/foto_perfil.webp" alt="Foto de Miguel Mateos dueño del porfolio">
+        <span class="my-location">
+            <Location_icon />
+            <p>Lorca | Murcia</p>
+        </span>
+    </div>
+
+</header>
+
+<style>
+    header {
+        display: flex;
+        align-self: start;
+        gap: 2rem;
+    }
+
+    header h1 {
+        font-size: 4rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        color: var(--text-color);
+        text-wrap: balance;
+    }
+
+    header img {
+        border-radius: 1rem;
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+    }
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .8rem;
+        color: var(--text-color);
+    }
+
+    .my-location {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--text-color);
+        width: 100%;
+
+        & svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        & p {
+            font-size: 1rem;
+        }   
+    }

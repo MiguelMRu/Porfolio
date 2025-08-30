@@ -1,0 +1,44 @@
+---
+//hacer que el hover se vaya activando segun en que posicion del html estemos
+---
+
+<nav>
+        <a href="#about">Sobre mí</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#contact">Contacto</a>
+</nav>
+
+
+<style>
+    nav {
+        position: sticky;
+        margin-inline: auto;
+        color: #fff;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        max-width: inherit;
+        width: 100%;
+        top: 20px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 0.5rem 1.8rem;
+        border-radius: 1rem;
+        border: 2px solid var(--main-color);
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: var(--main-color);
+            color: #fff;
+        }
+    }
+
+
+</style>

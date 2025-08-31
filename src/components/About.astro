@@ -1,14 +1,24 @@
 ---
-import Location_icon from './Location_icon.astro';
+import Location_icon from './icons/Location_icon.astro';
+import GitHubIcon from './icons/GitHub_icon.astro';
+import LinkedinIcon from './icons/Linkedin_icon.astro';
+import InstagramIcon from './icons/Intagram_icon.astro';
 ---
 
-<header id="about">
+<header>
     <hgroup>
         <h1>Miguel Mateos</h1>
         <p>
-            Soy desarrollador con <strong>más de 3 años de experiencia</strong> en el mundo IT
+            Soy desarrollador con <strong>más de 3 años de experiencia</strong> en el mundo IT, apasionado por el desarrollo Front-end.
         </p>
+        <div class="socials">
+        <a href="https://www.linkedin.com/in/miguel-mateos-ruiz-b04586198/" target="_blank" rel="noopener noreferrer"><LinkedinIcon class="social-icon"/></a>
+        <a href="https://github.com/MiguelMRu" target="_blank" rel="noopener noreferrer"><GitHubIcon class="social-icon"/></a>
+        <a href="https://www.instagram.com/miguel_741/" target="_blank" rel="noopener noreferrer"><InstagramIcon class="social-icon"/></a>
+    </div>
     </hgroup>
+
+    
 
     <div class="profile">
         <img src="/images/foto_perfil.webp" alt="Foto de Miguel Mateos dueño del porfolio">
@@ -24,11 +34,34 @@ import Location_icon from './Location_icon.astro';
     header {
         display: flex;
         align-self: start;
-        gap: 2rem;
+        justify-content: space-between;
     }
 
     header h1 {
         font-size: 4rem;
+    }
+
+    header .socials {
+        display: flex;
+        gap: 1rem;
+
+        & a {
+            color: var(--text-color);
+            height: auto;
+            display: block;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--main-color);
+            }
+        }
+
+        
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
     }
 
     header p {

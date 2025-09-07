@@ -1,6 +1,7 @@
 ---
 import NavBar from '../components/NavBar.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import About from '../components/About.astro';
 
 ---
@@ -8,10 +9,21 @@ import About from '../components/About.astro';
 <Layout title="Porfolio Miguel Mateos | Desarrollador con más de 3 años de experiencia" 
         description="Portfolio Miguel Mateos donde muestro mis proyectos y habilidades como desarrollador con más de 3 años de experiencia en el mundo IT">
     <NavBar />
-    <About />
+    <Header />
+    
     <main>
-        
+        <About id="about"/>
     </main>
+    
 </Layout>
 
 
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+    }
+</style>

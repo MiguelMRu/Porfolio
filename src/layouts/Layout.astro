@@ -29,14 +29,16 @@ const {title, description} = Astro.props;
 <style is:global>
 
   :root {
-    --main-color: #b53621;
-    --font-family: 'Inter', system-ui, 'Segoe UI';
-    --text-color: #1d1d1d;
+    --main-color: #bf2222;
+    --font-family: 'Bodoni', system-ui, 'Segoe UI';
+    --text-color: #1a1a1a;
+    --text-font: monserrat, system-ui, 'Segoe UI';
+    --header-size: 15rem;
   }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-family: 'Bodoni';
+  src: url('/fonts/LibreBodoni-VariableFont_wght.ttf') format('truetype');
 }
 
 
@@ -62,16 +64,13 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-  background-color: #dadbda;
-  font-family: var(--font-family);
-  max-width: 60dvw;
+
+  max-width: 100dvw;
   min-height: 100dvh;
-  margin: 0 auto;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 100px;
 
 
 }
@@ -90,21 +89,30 @@ input, button, textarea, select {
 /* 8. Avoid text overflows */
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+  
 }
 
 /* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
   color: var(--text-color);
+  
 }
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
   color: var(--main-color);
+  font-family: var(--font-family);
+  font-weight: normal;
+  font-style: italic;
 }
 
 strong {
   color: var(--main-color);
   font-weight: bold;
+}
+
+p, a, li, span, input, button, textarea {
+  font-family: var(--text-font);
 }
 
 </style>

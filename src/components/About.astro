@@ -1,17 +1,33 @@
 ---
 const { id } = Astro.props;
 import Github from './icons/GitHub_icon.astro'
+import LinkedIn from './icons/LinkedIn_icon.astro'
+import Mail from './icons/Mail_icon.astro'
 ---
 
 
 <section class="about" id={id}>
     <h2>sobre mí</h2>
-    <p>Hola, soy Miguel Mateos, un apasionado desarrollador Front-End con más de 3 años de experiencia en la creación de sitios web dinámicos y fáciles de usar.</p>
-    <article class="socials">
-        <a href="https://github.com/miguelmateos" target="_blank" rel="noopener noreferrer">
-            <Github class="icon" />
-        </a>
-    </article>
+
+    <div class="about-content">
+        <article class="about-text">
+            <p>Soy Miguel, un apasionado de la tecnología desde niño, lo que empezó siendo un hobby con los se fue transformando en vocación. Así que llegado el momento decidí estudiar un Grado Superior de Administración de Sistemas Informáticos en Red.</p>
+            <p>Tras esto entre en a realizar las prácticas en Nttdata en un equipo de BI, pero mi pasión siempre fue el desarrollo Front-end, por lo que tras conseguir años de experiencia, empecé a aprender todo lo necesario de forma autodidacta y a desarrollar proyectos propios.</p>
+        </article>
+        <article class="socials">
+            <a href="https://github.com/MiguelMRu" target="_blank" rel="noopener noreferrer">
+                <Github class="icons" />
+            </a>
+
+            <a href="https://www.linkedin.com/in/miguel-mateos-ruiz-b04586198/" target="_blank" rel="noopener noreferrer">
+                <LinkedIn class="icons" />
+            </a>
+
+            <a href="mailto:miguelmateosruiz@gmail.com">
+                <Mail class="icons" />
+            </a>
+        </article>
+    </div>
 
 </section>
 
@@ -22,7 +38,8 @@ import Github from './icons/GitHub_icon.astro'
         flex-direction: column;
         width: 100%;
         height: 100dvh;
-        padding-inline: 5rem;
+        padding: 2rem 5rem;
+        gap: 2rem;
 
     }
 
@@ -32,9 +49,46 @@ import Github from './icons/GitHub_icon.astro'
         align-self: flex-end;
     }
 
+    .about-content {
+        display: flex;
+        align-items: end;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex: 2;
+        
+    }
+
+    .about-text{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        flex: 1;
+    }
+
     .about p {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         max-width: 600px;
+
+    }
+
+    .socials {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+        color: var(--main-color);
+        width: fit-content;
+        height: fit-content;
+
+        & a {
+            width: 3rem;
+            height: auto;
+            color: var(--text-color);
+        }
+        & a:hover {
+            color: var(--main-color);
+        }
     }
 
 </style>

@@ -33,7 +33,7 @@ const {title, description} = Astro.props;
     --font-family: 'Bodoni', system-ui, 'Segoe UI';
     --text-color: #1a1a1a;
     --text-font: monserrat, system-ui, 'Segoe UI';
-    --header-size: 15rem;
+    --header-size: 11rem;
   }
 
 @font-face {
@@ -45,6 +45,7 @@ const {title, description} = Astro.props;
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /* 2. Remove default margin */
@@ -60,8 +61,7 @@ const {title, description} = Astro.props;
 }
 
 body {
-  /* 4. Add accessible line-height */
-  line-height: 1.5;
+
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
 
@@ -71,6 +71,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-behavior: smooth;
 
 
 }
@@ -114,5 +115,6 @@ strong {
 p, a, li, span, input, button, textarea {
   font-family: var(--text-font);
 }
+
 
 </style>

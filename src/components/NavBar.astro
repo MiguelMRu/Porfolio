@@ -3,7 +3,7 @@
 ---
 
 <nav>
-    <h2>miguel mateos</h2>
+    <a href="#header"><h2>miguel mateos</h2></a>
 
     <ul>
         <li><a href="#about">Sobre mí</a></li>
@@ -30,6 +30,10 @@
         animation: navScroll linear forwards;
         animation-timeline: scroll(root block);
         animation-range: 0px 100px; /* Opcional: controla el rango de scroll */
+    }
+
+    nav a {
+        text-decoration: none;
     }
 
     nav h2 {

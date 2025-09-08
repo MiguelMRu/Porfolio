@@ -30,17 +30,34 @@ const {title, description} = Astro.props;
 
   :root {
     --main-color: #bf2222;
-    --font-family: 'Bodoni', system-ui, 'Segoe UI';
+    --font-family: 'playfair', system-ui, 'Segoe UI';
     --text-color: #1a1a1a;
     --text-font: monserrat, system-ui, 'Segoe UI';
     --header-size: 11rem;
   }
 
 @font-face {
-  font-family: 'Bodoni';
-  src: url('/fonts/LibreBodoni-VariableFont_wght.ttf') format('truetype');
+  font-family: 'Cormorant';
+  src: url('/fonts/CormorantInfant-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
 }
 
+
+@font-face {
+  font-family: 'playfair';
+  src: url('/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Prata';
+  src: url('/fonts/Prata-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Vidaloka';
+  src: url('/fonts/Vidaloka-Regular.ttf') format('truetype');
+}
 
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
@@ -103,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
   color: var(--main-color);
   font-family: var(--font-family);
-  font-weight: normal;
+  font-weight: 300;
   font-style: italic;
 }
 

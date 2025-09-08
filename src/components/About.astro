@@ -11,7 +11,8 @@ import Mail from './icons/Mail_icon.astro'
 
     <div class="about-content">
         <article class="about-text">
-            <p>Soy Miguel, un apasionado de la tecnología desde niño, lo que empezó siendo un hobby con los se fue transformando en vocación. Así que llegado el momento decidí estudiar un Grado Superior de Administración de Sistemas Informáticos en Red.</p>
+            <h3>Soy Miguel</h3>
+            <p>un apasionado de la tecnología desde niño, lo que empezó siendo un hobby con los se fue transformando en vocación. Así que llegado el momento decidí estudiar un Grado Superior de Administración de Sistemas Informáticos en Red.</p>
             <p>Tras esto entre en a realizar las prácticas en Nttdata en un equipo de BI, pero mi pasión siempre fue el desarrollo Front-end, por lo que tras conseguir años de experiencia, empecé a aprender todo lo necesario de forma autodidacta y a desarrollar proyectos propios.</p>
         </article>
         <article class="socials">
@@ -44,18 +45,19 @@ import Mail from './icons/Mail_icon.astro'
     }
 
     .about h2 {
-        font-size: var(--header-size);
-        margin-bottom: 1rem;
         align-self: flex-end;
     }
 
     .about-content {
         display: flex;
         align-items: end;
-        gap: 2rem;
         flex-wrap: wrap;
         justify-content: space-between;
         flex: 2;
+        min-width: 90%;
+        margin-inline: auto;
+        margin-bottom: 2rem;
+        
         
     }
 
@@ -63,28 +65,42 @@ import Mail from './icons/Mail_icon.astro'
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
-        flex: 1;
+        width: 50%;
+
+        & h3 {
+            font-size: 4rem;
+            color: var(--text-color);
+            font-style: italic;
+            
+        }
+
+        & p {
+        font-size: 1.6rem;
+        max-width: 100%;
+        text-align: justify;
+        text-transform: uppercase;
+    }
+        
+
     }
 
-    .about p {
-        font-size: 1.8rem;
-        max-width: 600px;
-
-    }
 
     .socials {
         display: flex;
         gap: 2rem;
         align-items: center;
-        transition: all 0.2s ease-in-out;
         color: var(--main-color);
-        width: fit-content;
+        width: 50%;
         height: fit-content;
+        justify-content: flex-end;
+        padding: 0 2rem 2rem 0;
+
 
         & a {
-            width: 3rem;
+            width: 2.5rem;
             height: auto;
             color: var(--text-color);
+            transition: all 0.2s ease-in-out;
         }
         & a:hover {
             color: var(--main-color);

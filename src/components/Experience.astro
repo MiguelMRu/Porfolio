@@ -1,0 +1,76 @@
+---
+const { id } = Astro.props;
+
+const experience = [
+    {
+        title: "ntt data",
+        job: "Bussiness Intelligence",
+        date: "Junio 2022 - Actualidad",
+        description: "Desarrollo de aplicaciones web utilizando React y Node.js."
+    },
+    {
+        title: "manea coffee",
+        job: "Desarrollador Front-end freelance",
+        date: "Agosto 2025",
+        description: "Ayudé a esta tienda a mejorar su gestión de suscripciones, lo que mejoró la UX y por tanto las ventas."
+    }
+];
+---
+
+
+<section id={id} class="experience">
+    <h2>experiencia</h2>
+    <div class="experience-content">
+        {experience.map((item) => (
+            <article class="experience-item">
+                <h3>{item.title}</h3>
+                <p>{item.date} | {item.job}</p>
+                <p>{item.description}</p>
+            </article>
+        ))}
+    </div>
+
+</section>
+
+
+<style>
+    .experience-content {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        flex: 2;
+        min-width: 90%;
+        margin-inline: auto;
+        margin-bottom: 3rem;
+        flex-direction: column;
+        gap: 2rem;
+        
+    }
+
+    .experience-item{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+
+        & h3 {
+            font-size: 3rem;
+            color: var(--text-color);
+            align-self: flex-end;
+            font-weight: 500;
+            
+        }
+
+        & p {
+        font-size: 1.2rem;
+        max-width: 100%;
+        text-align: right;
+        text-transform: uppercase;
+        line-height: 1.5rem;
+
+    }
+        
+
+    }
+

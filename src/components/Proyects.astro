@@ -1,0 +1,100 @@
+---
+const {id} = Astro.props;
+
+const proyects = [
+    {
+        title: "Panel Kanban",
+        description: "Descripción del proyecto 1",
+        url: "https://lista-tareas-drab.vercel.app/",
+        image: "/images/panel_kanban.webp",
+        tecnologias: ["HTML", "CSS", "JavaScript"]
+    },
+    {
+        title: "Bucador de extensiones",
+        description: "Descripción del proyecto 2",
+        url: "https://proyecto2.com",
+        image: "/images/proyecto2.png",
+        tecnologias: ["HTML", "CSS", "React"]
+    },
+    {
+        title: "Landing Page recortador de URLs",
+        description: "Descripción del proyecto 3",
+        url: "https://proyecto3.com",
+        image: "/images/proyecto3.png",
+        tecnologias: ["HTML", "CSS", "React"]
+    }
+    
+];
+
+---
+
+<section id={id} class="proyects">
+    <h2>proyectos</h2>
+    <div class="proyects-content">
+        {proyects.map((proyect) => (
+            <article class="proyect-item">
+                <hgroup>
+                    <h3>{proyect.title}</h3>
+                    <p>{proyect.description}</p>
+                </hgroup>
+                
+                <a href={proyect.url} target="_blank" rel="noopener noreferrer">
+                    <img src={proyect.image} alt={proyect.title} />
+                </a>
+            </article>
+        ))}
+    </div>
+
+</section>
+
+<style>
+    h2{
+        align-self: flex-end;
+    }
+
+    .proyects-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex: 2;
+        min-width: 100%;
+        margin-bottom: 3rem;
+        gap: 2rem;
+        
+    }
+
+    .proyect-item{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        & hgroup {
+            background-color: #f9f9f9;
+
+            & h3 {
+                font-size: 1.5rem;
+                color: var(--text-color);
+                margin-bottom: 0.5rem;
+            }
+
+            & p {
+                font-size: 1rem;
+                color: #666;
+            }
+        }
+
+        & img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }

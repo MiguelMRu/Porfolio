@@ -6,7 +6,7 @@ const experience = [
         title: "ntt data",
         job: "Bussiness Intelligence",
         date: "Junio 2022 - Actualidad",
-        description: "Desarrollo de aplicaciones web utilizando React y Node.js."
+        description: "Tras termina el grado de ASIR, comencé a trabajar en NTT Data como desarrollador de BI, donde obtenido experiencia en SQL, SSIS, SSRS y mejorando mis habilidades de comunicación y trabajo en equipo."
     },
     {
         title: "manea coffee",
@@ -21,11 +21,11 @@ const experience = [
 <section id={id} class="experience">
     <h2>experiencia</h2>
     <div class="experience-content">
-        {experience.map((item) => (
+        {experience.map((job) => (
             <article class="experience-item">
-                <h3>{item.title}</h3>
-                <p>{item.date} | {item.job}</p>
-                <p>{item.description}</p>
+                <h3>{job.title}</h3>
+                <p>{job.date} | {job.job}</p>
+                <p>{job.description}</p>
             </article>
         ))}
     </div>
@@ -51,7 +51,7 @@ const experience = [
     .experience-item{
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 70%;
         
 
         & h3 {
@@ -68,6 +68,7 @@ const experience = [
         text-align: right;
         text-transform: uppercase;
         line-height: 1.5rem;
+        text-wrap: balance;
 
     }
         

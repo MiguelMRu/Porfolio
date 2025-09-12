@@ -1,4 +1,9 @@
 ---
+import HTML_icon from "../components/icons/Html_icon.astro";
+import CSS_icon from "../components/icons/Css_icon.astro";
+import JS_icon from "../components/icons/Js_icon.astro";
+import React_icon from "../components/icons/React_icon.astro";
+
 const {id} = Astro.props;
 
 const proyects = [
@@ -7,22 +12,23 @@ const proyects = [
         description: "Descripción del proyecto 1",
         url: "https://lista-tareas-drab.vercel.app/",
         image: "/images/panel_kanban.webp",
-        tecnologias: ["HTML", "CSS", "JavaScript"]
+        tecnologias: [HTML_icon, CSS_icon, JS_icon]
     },
     {
         title: "Bucador de extensiones",
         description: "Descripción del proyecto 2",
-        url: "https://proyecto2.com",
-        image: "/images/proyecto2.png",
-        tecnologias: ["HTML", "CSS", "React"]
+        url: "https://buscador-extensiones.vercel.app/",
+        image: "/images/buscador_extensiones.webp",
+        tecnologias: [HTML_icon, CSS_icon, React_icon]
     },
     {
         title: "Landing Page recortador de URLs",
         description: "Descripción del proyecto 3",
-        url: "https://proyecto3.com",
-        image: "/images/proyecto3.png",
-        tecnologias: ["HTML", "CSS", "React"]
+        url: "https://url-shortening-landing-page-chi.vercel.app/",
+        image: "/images/landing_page.webp",
+        tecnologias: [HTML_icon, CSS_icon, React_icon]
     }
+    
     
 ];
 
@@ -41,6 +47,11 @@ const proyects = [
                 <a href={proyect.url} target="_blank" rel="noopener noreferrer">
                     <img src={proyect.image} alt={proyect.title} />
                 </a>
+                <footer>
+                    {proyect.tecnologias.map((tecnologia) => (
+                        <div class="tecnologia-icon">{tecnologia}</div>
+                    ))}
+                </footer>
             </article>
         ))}
     </div>
@@ -60,21 +71,20 @@ const proyects = [
         flex: 2;
         min-width: 100%;
         margin-bottom: 3rem;
-        gap: 2rem;
+        gap: 1rem;
         
     }
 
     .proyect-item{
         display: flex;
         flex-direction: column;
-        width: 300px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
         overflow: hidden;
-        transition: transform 0.2s;
+        transition: flex 0.2s;
+        flex: 1;
+        height: 100%;
 
         &:hover {
-            transform: scale(1.05);
+            flex: 1.5;
         }
 
         & hgroup {
@@ -94,7 +104,21 @@ const proyects = [
 
         & img {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
         }
+
+        & footer {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+
+            & .tecnologia-icon {
+                padding: 0.2rem 0.5rem;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        
     }

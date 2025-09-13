@@ -23,6 +23,10 @@ const {id} = Astro.props;
         height: 100dvh;
         position: relative;
         gap: 2rem   ;
+
+         @media (width <= 750px) {
+            flex-direction: column
+        }
     }
 
 
@@ -42,8 +46,13 @@ const {id} = Astro.props;
 
 
     header img {
-        flex: width: 60%;
         height: 100%;
+        @media (width <= 750px) {
+            height: auto;
+  
+        }
+
+       
     }
 
     header hgroup{
@@ -51,7 +60,6 @@ const {id} = Astro.props;
         flex-direction: column;
         justify-content: end;
         width: auto;
-        font-size: 4rem;
         margin-bottom: 2rem;
 
         & p{

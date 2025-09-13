@@ -8,30 +8,27 @@ const {id} = Astro.props;
 
 const proyects = [
     {
-        title: "Panel Kanban",
-        description: "Descripción del proyecto 1",
+        title: "panel kanban",
+        description: "Panel de tareas estilo Kanban en el que peudes crear las culumnas que tu quieras, utilizar drag and drop para mover las tareas entre columnas y guardar todo en el local storage.",
         url: "https://lista-tareas-drab.vercel.app/",
         image: "/images/panel_kanban.webp",
-        tecnologias: [HTML_icon, CSS_icon, JS_icon]
+        tecnologias: ["html", "css", "js"]
     },
     {
-        title: "Bucador de extensiones",
-        description: "Descripción del proyecto 2",
+        title: "bucador de extensiones",
+        description: "Buscador de extensiones hecho con React, renderiza un json, en el que puedes activar o desactivar las extensiones, borrarlas y filtrarlas según esten acivas o no.",
         url: "https://buscador-extensiones.vercel.app/",
         image: "/images/buscador_extensiones.webp",
-        tecnologias: [HTML_icon, CSS_icon, React_icon]
+        tecnologias: ["html", "css", "react"]
     },
     {
-        title: "Landing Page recortador de URLs",
-        description: "Descripción del proyecto 3",
+        title: "landing page recortador de URLs",
+        description: "Landing page de un recortador de URLs, hecho con React, que permite acortar URLs de manera sencilla conectandose a una API externa.",
         url: "https://url-shortening-landing-page-chi.vercel.app/",
         image: "/images/landing_page.webp",
-        tecnologias: [HTML_icon, CSS_icon, React_icon]
-    }
-    
-    
+        tecnologias: ["html", "css", "react"]
+    }          
 ];
-
 ---
 
 <section id={id} class="proyects">
@@ -41,21 +38,28 @@ const proyects = [
             <article class="proyect-item">
                 <hgroup>
                     <h3>{proyect.title}</h3>
-                    <p>{proyect.description}</p>
+                    <div class="proyect-skills">
+                        {proyect.tecnologias.map((tecnologia) => (
+                            <div class="tecnologia-icon">
+                                {tecnologia === "html" && <HTML_icon />}
+                                {tecnologia === "css" && <CSS_icon />}
+                                {tecnologia === "js" && <JS_icon />}
+                                {tecnologia === "react" && <React_icon />}
+                            </div>
+                        ))}
+                    </div>
                 </hgroup>
                 
                 <a href={proyect.url} target="_blank" rel="noopener noreferrer">
                     <img src={proyect.image} alt={proyect.title} />
                 </a>
+                
                 <footer>
-                    {proyect.tecnologias.map((tecnologia) => (
-                        <div class="tecnologia-icon">{tecnologia}</div>
-                    ))}
+                    <p>{proyect.description}</p>
                 </footer>
             </article>
         ))}
     </div>
-
 </section>
 
 <style>
@@ -72,53 +76,66 @@ const proyects = [
         min-width: 100%;
         margin-bottom: 3rem;
         gap: 1rem;
-        
     }
 
-    .proyect-item{
+    .proyect-item {
         display: flex;
         flex-direction: column;
         overflow: hidden;
         transition: flex 0.2s;
         flex: 1;
         height: 100%;
+        gap: 0.5rem;
 
         &:hover {
-            flex: 1.5;
+            flex: 1.2;
+        }
+
+        &:not(:hover) {
+            flex: 0.7;
         }
 
         & hgroup {
-            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
 
             & h3 {
                 font-size: 1.5rem;
                 color: var(--text-color);
-                margin-bottom: 0.5rem;
             }
 
-            & p {
-                font-size: 1rem;
-                color: #666;
+            & .proyect-skills {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+
+                & .tecnologia-icon {
+                    padding: 0.2rem 0.5rem;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                
             }
+        }
         }
 
         & img {
             width: 100%;
-            height: 100%;
+            max-height: 100%;
         }
 
         & footer {
             display: flex;
             gap: 1rem;
-            padding: 1rem;
-            background-color: #f9f9f9;
 
-            & .tecnologia-icon {
-                padding: 0.2rem 0.5rem;
-                width: 50px;
-                height: 50px;
+            & p {
+                font-size: 1rem;
+                text-wrap: balance;
+                text-transform: uppercase;
             }
-        }
-
         
+            
+        }
     }
+</style>

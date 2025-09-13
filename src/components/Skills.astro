@@ -1,0 +1,88 @@
+---
+import HTML_icon from "../components/icons/Html_icon.astro";
+import CSS_icon from "../components/icons/Css_icon.astro";
+import JS_icon from "../components/icons/Js_icon.astro";
+import React_icon from "../components/icons/React_icon.astro";
+import Astro_icon from "../components/icons/Astro.astro";
+
+const {id} = Astro.props;
+
+---
+
+
+<section id={id} class="skills">
+    <h2>habilidades</h2>
+    <div class="skills-content">
+        <article class="skill-article">
+            <h3>Frontend</h3>
+            <ul>
+                <li><HTML_icon /></li>
+                <li><CSS_icon /></li>
+                <li><JS_icon /></li>
+                <li><React_icon /></li>
+                <li><Astro_icon /></li>
+                <!--<li><Tailwind_icon /></li>-- -->
+                <li>Git y GitHub</li>
+            </ul>
+        </article>
+        <article class="skill-article">
+            <h3>Backend</h3>
+            <ul>
+                <li>SQL</li>
+                <li>Express</li>
+                <li>MongoDB</li>
+                <li>PostgreSQL</li>
+                <li>API REST</li>
+            </ul>
+        </article>
+        <article class="skill-article">
+            <h3>Soft-Skills</h3>
+            <ul>
+                <li>Trabajo en equipo</li>
+                <li>Comunicación</li>
+                <li>Resolución de problemas</li>
+                <li>Adaptabilidad</li>
+                <li>Jira</li>
+                <li>Metodologías ágiles (Scrum, Kanban)</li>
+            </ul>
+        </article>
+    </div>
+    
+</section>
+
+<style>
+
+
+
+    .skills-content {
+        display: flex;
+        gap: 5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .skill-article {
+        padding: 1rem;
+        border-radius: 8px;
+        flex: 1;
+        background-color: var(--main-color);
+
+        & h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        & ul{
+            list-style-type: none;
+            padding: 1rem;
+            text-align: left;
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(auto-fill, 50px);
+            gap: 5rem;
+            justify-content: space-around;
+        }
+    }
+
+</style>

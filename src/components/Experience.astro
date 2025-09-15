@@ -34,6 +34,13 @@ const experience = [
 
 
 <style>
+
+    .experience{
+        @media (width <= 750px){
+            padding: 1rem;
+        }
+    }
+
     .experience-content {
         display: flex;
         align-items: flex-end;
@@ -45,6 +52,11 @@ const experience = [
         margin-bottom: 3rem;
         flex-direction: column;
         gap: 2rem;
+
+        @media (width <= 750px){
+            justify-content: flex-start;
+            height: fit-content;
+        }
         
     }
 
@@ -52,10 +64,14 @@ const experience = [
         display: flex;
         flex-direction: column;
         width: 70%;
+
+        @media (width <= 750px){
+            width: 100%;
+        }
         
 
         & h3 {
-            font-size: 3rem;
+            font-size: var(--h3-font-size);
             color: var(--text-color);
             align-self: flex-end;
             font-weight: 500;
@@ -69,6 +85,10 @@ const experience = [
         text-transform: uppercase;
         line-height: 1.5rem;
         text-wrap: balance;
+
+        @media (width <= 750px){
+            font-size: .9rem;
+        }
 
     }
         

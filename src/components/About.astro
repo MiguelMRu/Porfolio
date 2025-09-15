@@ -16,15 +16,15 @@ import Mail from './icons/Mail_icon.astro'
             <p>Tras esto entre en a realizar las prácticas en Nttdata en un equipo de BI, pero mi pasión siempre fue el desarrollo Front-end, por lo que tras conseguir años de experiencia, empecé a aprender todo lo necesario de forma autodidacta y a desarrollar proyectos propios.</p>
         </article>
         <article class="socials">
-            <a href="https://github.com/MiguelMRu" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/MiguelMRu" target="_blank" rel="noopener noreferrer"aria-label="Ver mi GitHub">
                 <Github class="icons" />
             </a>
 
-            <a href="https://www.linkedin.com/in/miguel-mateos-ruiz-b04586198/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/miguel-mateos-ruiz-b04586198/" target="_blank" rel="noopener noreferrer" aria-label="Ver linkedin">
                 <LinkedIn class="icons" />
             </a>
 
-            <a href="mailto:miguelmateosruiz@gmail.com">
+            <a href="mailto:miguelmateosruiz@gmail.com" aria-label="Enviar correo a Miguel Mateos">
                 <Mail class="icons" />
             </a>
         </article>
@@ -42,6 +42,12 @@ import Mail from './icons/Mail_icon.astro'
         padding: 2rem 5rem;
         gap: 2rem;
 
+        @media (width <= 750px){
+            padding: 0.5rem 1rem;
+            height: auto;
+        
+        }
+
     }
 
     .about h2 {
@@ -57,6 +63,14 @@ import Mail from './icons/Mail_icon.astro'
         min-width: 90%;
         margin-inline: auto;
         margin-bottom: 2rem;
+
+        @media (width <= 750px){
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 5rem;
+            margin-bottom: 0;
+        }
         
         
     }
@@ -67,10 +81,14 @@ import Mail from './icons/Mail_icon.astro'
         gap: 1.5rem;
         width: 50%;
 
+        @media (width <= 750px){
+            width: 100%;
+        }
+
         & h3 {
-            font-size: 4rem;
             color: var(--text-color);
             font-style: italic;
+            font-size: var(--h3-font-size);
             
         }
 
@@ -79,6 +97,7 @@ import Mail from './icons/Mail_icon.astro'
         max-width: 100%;
         text-align: justify;
         text-transform: uppercase;
+        font-size: var(--text-size)
     }
         
 
@@ -94,7 +113,10 @@ import Mail from './icons/Mail_icon.astro'
         height: fit-content;
         justify-content: flex-end;
         padding: 0 2rem 2rem 0;
-
+        
+        @media (width <= 750px){
+            padding-bottom: 0;
+        }
 
         & a {
             width: 2.5rem;

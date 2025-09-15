@@ -51,7 +51,7 @@ const proyects = [
                 </hgroup>
                 
                 <a href={proyect.url} target="_blank" rel="noopener noreferrer">
-                    <img src={proyect.image} alt={proyect.title} />
+                    <img src={proyect.image} alt={proyect.title} loading="lazy"/>
                 </a>
                 
                 <footer>
@@ -76,6 +76,12 @@ const proyects = [
         min-width: 100%;
         margin-bottom: 3rem;
         gap: 1rem;
+        flex-wrap: wrap;
+
+         @media (width <= 750px) {
+            gap: 2rem;
+
+        }
     }
 
     .proyect-item {
@@ -87,12 +93,20 @@ const proyects = [
         height: 100%;
         gap: 0.5rem;
 
-        &:hover {
-            flex: 1.2;
+         /* Solo aplicar hover en dispositivos que lo soportan correctamente */
+        @media (hover: hover) {
+            &:hover {
+                flex: 1.2;
+            }
+
+            &:not(:hover) {
+                flex: 0.7;
+            }
         }
 
-        &:not(:hover) {
-            flex: 0.7;
+        @media (width <= 750px) {
+            flex: auto;
+
         }
 
         & hgroup {

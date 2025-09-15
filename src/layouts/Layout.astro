@@ -33,7 +33,9 @@ const {title, description} = Astro.props;
     --font-family: 'Baskervville', 'playfair', system-ui, 'Segoe UI';
     --text-color: #1a1a1a;
     --text-font: monserrat, system-ui, 'Segoe UI';
-    --header-size: clamp(2rem, 8vw + 2rem, 11rem);
+    --header-size: clamp(1rem, 8vw + 2rem, 11rem);
+    --h3-font-size: clamp(2rem,1vw + 0.5rem,4rem);
+    --text-size: clamp(1rem,1vw + 0.5rem,2rem);
   }
 
 
@@ -138,6 +140,12 @@ p, a, li, span, input, button, textarea {
         height: 100dvh;
         padding: 2rem 5rem;
         gap: 2rem;
+
+        @media (width <=750px){
+          padding: 0.5rem 1rem;
+          height: auto;
+        }
+        
 
         & h2 {
             font-size: var(--header-size);

@@ -13,19 +13,48 @@ const {id} = Astro.props;
 <section id={id} class="skills">
     <h2>habilidades</h2>
     <div class="skills-content">
-        <article class="skill-article">
+        <article class="skill-article front">
             <h3>Frontend</h3>
             <ul>
-                <li><HTML_icon /></li>
-                <li><CSS_icon /></li>
-                <li><JS_icon /></li>
-                <li><React_icon /></li>
-                <li><Astro_icon /></li>
+                <li>
+                    <HTML_icon /> 
+                    <div class="skill-text">
+                        <p>HTML</p>
+                        <p>AVANZADO</p>
+                    </div>
+                </li>
+                <li>
+                    <CSS_icon />
+                    <div class="skill-text">
+                        <p>CSS</p>
+                        <p>AVANZADO</p>
+                    </div>
+                </li>
+                <li>
+                    <JS_icon />
+                    <div class="skill-text">
+                        <p>JAVASCRIPT</p>
+                        <p>INTERMEDIO</p>
+                    </div>
+                </li>
+                <li>
+                    <React_icon />
+                    <div class="skill-text">
+                        <p>REACT</p>
+                        <p>INTERMEDIO</p>
+                    </div>
+                </li>
+                <li><Astro_icon />
+                    <div class="skill-text">
+                        <p>ASTRO</p>
+                        <p>BASICO</p>
+                    </div>
+                </li>
                 <!--<li><Tailwind_icon /></li>-- -->
                 <li>Git y GitHub</li>
             </ul>
         </article>
-        <article class="skill-article">
+        <article class="skill-article back">
             <h3>Backend</h3>
             <ul>
                 <li>SQL</li>
@@ -35,7 +64,7 @@ const {id} = Astro.props;
                 <li>API REST</li>
             </ul>
         </article>
-        <article class="skill-article">
+        <article class="skill-article soft">
             <h3>Soft-Skills</h3>
             <ul>
                 <li>Trabajo en equipo</li>
@@ -55,17 +84,16 @@ const {id} = Astro.props;
 
 
     .skills-content {
-        display: flex;
+        display: grid;
         gap: 5rem;
-        justify-content: center;
-        flex-wrap: wrap;
+        grid-template-areas: 
+        "front back"
+        "soft soft" ;
     }
 
     .skill-article {
         padding: 1rem;
         border-radius: 8px;
-        flex: 1;
-       
 
         & h3 {
             font-size: 1.5rem;
@@ -75,14 +103,59 @@ const {id} = Astro.props;
 
         & ul{
             list-style-type: none;
-            padding: 1rem;
             text-align: left;
             display: grid;
             width: 100%;
             grid-template-columns: repeat(auto-fill, 50px);
             gap: 5rem;
-            justify-content: space-around;
+            justify-content: space-between;
+
+            & li{
+                display: flex;
+                flex-direction: column;
+                width: 100px;
+                align-items: center;
+                font-size: .8rem;
+                gap: 1rem;
+                box-shadow: 3px 5px 5px var(--text-color);
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                border: 1px solid black;
+
+                & .skill-text{
+                    text-align: center;
+                    display: flex;
+                    gap: .2rem;
+                    flex-direction: column;
+                }
+
+            }
         }
     }
+
+    .front{
+        grid-area: front;
+    }
+    .back{
+        grid-area: back;
+    }
+
+    .soft{
+        grid-area: soft;
+        
+        & h3{
+            text-align: center
+        }
+        & ul{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5rem;
+
+            
+        }
+    }
+
+
 
 </style>

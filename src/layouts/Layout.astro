@@ -7,7 +7,7 @@ import Analytics from '@vercel/analytics/astro'
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,  shrink-to-fit=no" />
 		<link rel="icon" type="image/x-icon" href="/images/foto_perfil.webp" />
 		<meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
@@ -71,12 +71,16 @@ import Analytics from '@vercel/analytics/astro'
   }
 }
 
+html {
+  width: 100%;
+}
+
 body {
 
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-
-  max-width: 100dvw;
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden; /* por si aparece scroll lateral */
   min-height: 100dvh;
   position: relative;
@@ -84,6 +88,8 @@ body {
   flex-direction: column;
   align-items: center;
   scroll-behavior: smooth;
+
+  
 
 
 }

@@ -1,0 +1,47 @@
+User-agent: *
+Allow: /
+
+# Permitir acceso a todos los archivos CSS y JS para renderizado correcto
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+Allow: /images/
+Allow: /img/
+
+# Permitir acceso a archivos de fuentes
+Allow: *.css
+Allow: *.js
+Allow: *.woff
+Allow: *.woff2
+Allow: *.ttf
+Allow: *.eot
+Allow: *.svg
+
+# Bloquear archivos innecesarios para SEO
+Disallow: /*.json$
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.next/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /.vercel/
+Disallow: /README.md
+
+# Permitir específicamente archivos importantes
+Allow: /sitemap-index.xml
+Allow: /favicon.ico
+Allow: /robots.txt
+
+# Configuración para bots específicos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap (actualiza esta URL cuando tengas un sitemap)
+# Sitemap: https://porfolio-jet-kappa.vercel.app/sitemap-index.xml
+
+# Crawl-delay para evitar sobrecarga del servidor
+Crawl-delay: 1

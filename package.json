@@ -9,7 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
     "@emailjs/browser": "^4.4.1",
+    "@vercel/analytics": "^1.5.0",
     "astro": "^5.13.5"
   },
   "devDependencies": {

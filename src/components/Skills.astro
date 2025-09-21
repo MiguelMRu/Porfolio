@@ -4,7 +4,11 @@ import CSS_icon from "../components/icons/Css_icon.astro";
 import JS_icon from "../components/icons/Js_icon.astro";
 import React_icon from "../components/icons/React_icon.astro";
 import Astro_icon from "../components/icons/Astro.astro";
-
+import Git_Icons from "../components/icons/Git_icon.astro";
+import Tailwind_icon from "../components/icons/Tailwind_Icon.astro";
+import Msql_Icon from "../components/icons/Msql_Icon.astro";
+import Postgre_Icon from "../components/icons/Postgre_Icon.astro";
+import MySQL_Icon from "../components/icons/MySQL_Icon.astro";
 const {id} = Astro.props;
 
 ---
@@ -18,50 +22,28 @@ const {id} = Astro.props;
             <ul>
                 <li>
                     <HTML_icon /> 
-                    <div class="skill-text">
-                        <p>HTML</p>
-                        <p>AVANZADO</p>
-                    </div>
                 </li>
                 <li>
                     <CSS_icon />
-                    <div class="skill-text">
-                        <p>CSS</p>
-                        <p>AVANZADO</p>
-                    </div>
                 </li>
                 <li>
                     <JS_icon />
-                    <div class="skill-text">
-                        <p>JAVASCRIPT</p>
-                        <p>INTERMEDIO</p>
-                    </div>
                 </li>
                 <li>
                     <React_icon />
-                    <div class="skill-text">
-                        <p>REACT</p>
-                        <p>INTERMEDIO</p>
-                    </div>
                 </li>
                 <li><Astro_icon />
-                    <div class="skill-text">
-                        <p>ASTRO</p>
-                        <p>BASICO</p>
-                    </div>
                 </li>
-                <!--<li><Tailwind_icon /></li>-- -->
-                <li>Git y GitHub</li>
+                <li><Tailwind_icon /></li>
+                <li><Git_Icons /></li>
             </ul>
         </article>
         <article class="skill-article back">
             <h3>Backend</h3>
             <ul>
-                <li>SQL</li>
-                <li>Express</li>
-                <li>MongoDB</li>
-                <li>PostgreSQL</li>
-                <li>API REST</li>
+                <li><Msql_Icon /></li>
+                <li><Postgre_Icon /></li>
+                <li><MySQL_Icon /></li>
             </ul>
         </article>
         <article class="skill-article soft">
@@ -70,9 +52,8 @@ const {id} = Astro.props;
                 <li>Trabajo en equipo</li>
                 <li>Comunicación</li>
                 <li>Resolución de problemas</li>
-                <li>Adaptabilidad</li>
-                <li>Jira</li>
                 <li>Metodologías ágiles (Scrum, Kanban)</li>
+                <li>Gestión del tiempo</li>
             </ul>
         </article>
     </div>
@@ -85,42 +66,68 @@ const {id} = Astro.props;
 
     .skills-content {
         display: grid;
-        gap: 5rem;
+        gap: 2rem;
         grid-template-areas: 
-        "front back"
-        "soft soft" ;
+        "front"
+        "back"
+        "soft";
+        justify-content: flex-end;
+        width: fit-content;
+        align-self: flex-end;
+        justify-self: flex-end;
+        height: 100%;
+
+        @media (width <= 750px) {
+            height: fit-content;
+            justify-self: center;
+            align-self: center;
+
+        }      
     }
 
     .skill-article {
         padding: 1rem;
         border-radius: 8px;
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        
 
         & h3 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
             color: var(--text-color);
         }
 
         & ul{
             list-style-type: none;
-            text-align: left;
-            display: grid;
+            display: flex;
             width: 100%;
-            grid-template-columns: repeat(auto-fill, 50px);
-            gap: 5rem;
-            justify-content: space-between;
+            gap: 3rem;
+            justify-content: flex-end;
+            width: 100%;
+            flex-wrap: wrap;
+            @media (width <= 750px) {
+                justify-content: space-between;
+                align-items: center;
+                padding: 0;
+
+        }     
+            
 
             & li{
-                display: flex;
-                flex-direction: column;
-                width: 100px;
-                align-items: center;
-                font-size: .8rem;
-                gap: 1rem;
-                box-shadow: 3px 5px 5px var(--text-color);
-                padding: 1rem 2rem;
-                border-radius: 8px;
-                border: 1px solid black;
+                width: 50px;
+                color: var(--text-color);
+                transition: all .2s ease-in-out;
+
+                &:hover{
+                    transform: scale(1.2);
+                    
+                }
+
+
 
                 & .skill-text{
                     text-align: center;
@@ -142,18 +149,13 @@ const {id} = Astro.props;
 
     .soft{
         grid-area: soft;
-        
-        & h3{
-            text-align: center
-        }
-        & ul{
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 5rem;
 
-            
+        & li{
+            text-align: right;
+            flex: 1;
+            font-size: 1rem;
         }
+        
     }
 
 

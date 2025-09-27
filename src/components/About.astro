@@ -91,7 +91,7 @@ import CV from './icons/Curriculum.astro'
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
-        width: 50%;
+        width: 60%;
 
         @media (width <= 750px){
             width: 100%;
@@ -121,7 +121,7 @@ import CV from './icons/Curriculum.astro'
         gap: 2rem;
         align-items: center;
         color: var(--main-color);
-        width: 50%;
+        width: 40%;
         height: fit-content;
         justify-content: flex-end;
         padding: 0 2rem 2rem 0;
@@ -136,9 +136,34 @@ import CV from './icons/Curriculum.astro'
             height: auto;
             color: var(--text-color);
             transition: all 0.2s ease-in-out;
+            /*
+            animation-name: popUP;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            
+            
+            animation-timeline: view(block 80% 10%);
+            */
         }
         & a:hover {
             color: var(--main-color);
+        }
+    }
+
+    @keyframes popUP{
+        0% {
+            opacity: 0;
+            transform: scale(0.2);
+        }
+
+        90% {
+            opacity: 1;
+            transform: scale(1.5);
+        }
+        to{
+            opacity: 1;
+            transform: scale(1);
         }
     }
 

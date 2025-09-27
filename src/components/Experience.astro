@@ -1,4 +1,5 @@
 ---
+import Skills from './Skills.astro';
 const { id } = Astro.props;
 
 const experience = [
@@ -9,7 +10,7 @@ const experience = [
         description: "Tras termina el grado de ASIR, comencé a trabajar en NTT Data como desarrollador de BI, donde obtenido experiencia en SQL, SSIS, SSRS y mejorando mis habilidades de comunicación y trabajo en equipo."
     },
     {
-        title: "nimphe spirit",
+        title: "nymphe spirit",
         job: "Desarrollador Front-end freelance",
         date: "Actualmente",
         description: "Estoy desarrollando la web para la ilustradora Alba Tejedor (nimphe spirit), utilizando las tecnoligias de Astro y React, en la que se podrá encontrar una tienda online y su porfolio."
@@ -20,6 +21,8 @@ const experience = [
 
 <section id={id} class="experience">
     <h2>experiencia</h2>
+
+    <Skills id="skills" />
     <div class="experience-content">
         {experience.map((job) => (
             <article class="experience-item">
@@ -36,12 +39,31 @@ const experience = [
 <style>
 
     .experience{
+
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "skills experience";
+        padding: 0.5rem 5rem;
+        grid-template-columns: 1fr 1.5fr;
         @media (width <= 750px){
             padding: 0.5rem 2rem;
+
+            grid-template-areas: 
+            "header"
+            "experience"
+            "skills";
+        }
+
+        & h2{
+            grid-area: header;
         }
     }
 
+
+
     .experience-content {
+        grid-area: experience;
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
@@ -49,7 +71,6 @@ const experience = [
         flex: 2;
         min-width: 90%;
         margin-inline: auto;
-        margin-bottom: 3rem;
         flex-direction: column;
         gap: 2rem;
 
@@ -63,8 +84,7 @@ const experience = [
     .experience-item{
         display: flex;
         flex-direction: column;
-        width: 70%;
-
+       
         @media (width <= 750px){
             width: 100%;
         }
@@ -83,7 +103,7 @@ const experience = [
         max-width: 100%;
         text-align: right;
         text-transform: uppercase;
-        line-height: 1.5rem;
+        line-height: 1.8rem;
         text-wrap: balance;
 
         @media (width <= 750px){

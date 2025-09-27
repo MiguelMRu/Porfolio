@@ -15,10 +15,10 @@ const {id} = Astro.props;
 
 
 <section id={id} class="skills">
-    <h2>habilidades</h2>
+   <!-- <h2>habilidades</h2> -->
     <div class="skills-content">
         <article class="skill-article front">
-            <h3>Frontend</h3>
+            <!-- <h3>Frontend</h3> -->
             <ul>
                 <li>
                     <HTML_icon /> 
@@ -36,43 +36,52 @@ const {id} = Astro.props;
                 </li>
                 <li><Tailwind_icon /></li>
                 <li><Git_Icons /></li>
-            </ul>
-        </article>
-        <article class="skill-article back">
-            <h3>Backend</h3>
-            <ul>
                 <li><Msql_Icon /></li>
                 <li><Postgre_Icon /></li>
                 <li><MySQL_Icon /></li>
             </ul>
         </article>
-        <article class="skill-article soft">
-            <h3>Soft-Skills</h3>
+       <!-- <article class="skill-article back">
+             <h3>Backend</h3> 
             <ul>
+                <li><Msql_Icon /></li>
+                <li><Postgre_Icon /></li>
+                <li><MySQL_Icon /></li>
+            </ul>
+        </article>-->
+       <!-- <article class="skill-article soft">
+
+             <h3>Soft-Skills</h3> 
+             <ul>
                 <li>Trabajo en equipo</li>
                 <li>Comunicación</li>
                 <li>Resolución de problemas</li>
                 <li>Metodologías ágiles (Scrum, Kanban)</li>
                 <li>Gestión del tiempo</li>
             </ul>
-        </article>
+        </article> -->
     </div>
     
 </section>
 
 <style>
+    /*
+    .skills{
+        height: fit-content;
+    }
 
-
-
+*/
+    .skills {
+        grid-area: skills;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
     .skills-content {
-        display: grid;
+        display: flex;
         gap: 2rem;
-        grid-template-areas: 
-        "front"
-        "back"
-        "soft";
         justify-content: flex-end;
-        width: fit-content;
+        width: 100%;
         align-self: flex-end;
         justify-self: flex-end;
         height: 100%;
@@ -81,6 +90,7 @@ const {id} = Astro.props;
             height: fit-content;
             justify-self: center;
             align-self: center;
+            width: 100%;
 
         }      
     }
@@ -93,6 +103,7 @@ const {id} = Astro.props;
         flex-direction: column;
         width: 100%;
         gap: 1rem;
+        justify-content: flex-end;
         
 
         & h3 {
@@ -103,12 +114,16 @@ const {id} = Astro.props;
 
         & ul{
             list-style-type: none;
-            display: flex;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(5, 70px);
             width: 100%;
-            gap: 3rem;
-            justify-content: flex-end;
+            gap: 2rem;
+           /* justify-content: flex-end;*/
             width: 100%;
             flex-wrap: wrap;
+
+
             @media (width <= 750px) {
                 justify-content: space-between;
                 align-items: center;
@@ -118,12 +133,12 @@ const {id} = Astro.props;
             
 
             & li{
-                width: 50px;
+                width: 40px;
                 color: var(--text-color);
                 transition: all .2s ease-in-out;
 
                 &:hover{
-                    transform: scale(1.2);
+                    transform: scale(1.5);
                     
                 }
 
